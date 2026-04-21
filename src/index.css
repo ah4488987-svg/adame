@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-accent: #FFE66D;
+  --color-bg-light: #F7FFF7;
+}
+
+body {
+  @apply bg-[var(--color-bg-light)] text-slate-800 font-sans;
+  direction: rtl;
+}
+
+.cartoon-card {
+  @apply bg-white border-4 border-slate-900 rounded-3xl p-6 shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(15,23,42,1)] transition-all;
+}
+
+.cartoon-button {
+  @apply bg-[var(--color-primary)] text-white border-4 border-slate-900 rounded-2xl px-6 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all;
+}
+
+.speech-bubble {
+  @apply relative bg-white border-4 border-slate-900 rounded-2xl p-4 shadow-lg before:content-[''] before:absolute before:bottom-[-20px] before:left-[20px] before:border-l-[15px] before:border-l-transparent before:border-r-[15px] before:border-r-transparent before:border-t-[20px] before:border-t-slate-900 after:content-[''] after:absolute after:bottom-[-12px] after:left-[22px] after:border-l-[13px] after:border-l-transparent after:border-r-[13px] after:border-r-transparent after:border-t-[18px] after:border-t-white;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #certificate, #certificate * {
+    visibility: visible;
+  }
+  #certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    border: none !important;
+  }
+}
